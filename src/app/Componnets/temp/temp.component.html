@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="h3 mt-3">Server Data</div>
+            <div class="lead  text-danger">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aspernatur molestias, id maxime atque vero est deleniti perferendis veritatis. Sunt neque beatae eius harum ratione dolorem deserunt molestiae, ea exercitationem, perspiciatis aperiam deleniti voluptates voluptatum unde a voluptatibus officiis? Magnam harum odio placeat quibusdam officiis eos cupiditate, quos cumque explicabo!</div>
+            <button class="btn btn-danger px-3 mt-3" (click)="getData()">Get Data</button>
+            <button class="btn btn-danger px-3 mt-3 mx-3" (click)="hideData()">Hide Data</button>
+        </div>
+    </div>
+    <div class="row mt-5 " *ngIf="data.length > 0">
+        <div class="col">
+            <table class="table table-hover  table-primary text-center text-dark">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>IMAGE</th>
+                        <th>NAME</th>
+                        <th>GENDER</th>
+                        <th>EMAIL</th>
+                        <th>CITY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of data">
+                        <td>{{d.id.value}}</td>
+                        <td>
+                            <img src={{d.picture.medium}} width="100" height="100" />
+                        </td>
+                        <td>{{d.name.first}} {{d.name.last}}</td>
+                        <td>{{d.gender}}</td>
+                        <td>{{d.email}}</td>
+                        <td>{{d.location.city}}
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
